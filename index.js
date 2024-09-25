@@ -12,23 +12,23 @@ connectDB();
 const cors = require("cors")
 
 // yeh mera code hai
-// app.use(
-//     cors({
-//         origin:"https://social-backend-6n19.onrender.com",
-//     })
-// )
+app.use(
+    cors({
+        origin:"https://new-social-frontend-4sxr.vercel.app",
+    })
+)
 
-const corsOptions = {
-  origin: 'https://new-social-frontend-4sxr.vercel.app', // Your updated frontend domain
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
-  credentials: true,
-  preflightContinue: false,
-  optionsSuccessStatus: 204,
-};
+// const corsOptions = {
+//   origin: 'https://new-social-frontend-4sxr.vercel.app', // Your updated frontend domain
+//   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+//   allowedHeaders: ['Content-Type', 'Authorization'],
+//   credentials: true,
+//   preflightContinue: false,
+//   optionsSuccessStatus: 204,
+// };
 
-app.use(cors(corsOptions));
-app.options('*', cors(corsOptions));
+// app.use(cors(corsOptions));
+// app.options('*', cors(corsOptions));
 
 const cloudinary = require('cloudinary').v2
 
