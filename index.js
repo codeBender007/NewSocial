@@ -13,7 +13,7 @@ const cors = require("cors")
 
 app.use(
     cors({
-        origin:"http://localhost:3000",
+        origin:"https://social-backend-6n19.onrender.com",
     })
 )
 
