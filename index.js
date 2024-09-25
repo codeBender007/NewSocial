@@ -18,23 +18,17 @@ const cors = require("cors")
 //     })
 // )
 
-// Yeh solution hai
-// CORS configuration
 const corsOptions = {
-  origin: 'https://practice-iota-two.vercel.app', // Your frontend domain
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Allow these HTTP methods
-  allowedHeaders: ['Content-Type', 'Authorization'], // Allow these headers
-  credentials: true, // Allow credentials if you are using cookies or other credentials
-  preflightContinue: false, // Pass the OPTIONS request to the next middleware
-  optionsSuccessStatus: 204 // Some browsers choke on 204, so this ensures success
+  origin: 'https://new-social-frontend-4sxr.vercel.app', // Your updated frontend domain
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true,
+  preflightContinue: false,
+  optionsSuccessStatus: 204,
 };
 
-// Apply CORS middleware to all routes
 app.use(cors(corsOptions));
-
-// Ensure the preflight OPTIONS request gets handled properly
-app.options('*', cors(corsOptions)); // Preflight handling for all routes
-// yeh tak aata hai solution
+app.options('*', cors(corsOptions));
 
 const cloudinary = require('cloudinary').v2
 
