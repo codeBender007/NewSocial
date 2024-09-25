@@ -11,11 +11,22 @@ app.use(cookieParser());
 connectDB();
 const cors = require("cors")
 
-app.use(
-    cors({
-        origin:"https://social-backend-6n19.onrender.com",
-    })
-)
+// app.use(
+//     cors({
+//         origin:"https://social-backend-6n19.onrender.com",
+//     })
+// )
+
+// Enable CORS for your frontend domain
+app.use(cors({
+  origin: 'https://practice-iota-two.vercel.app' // Replace with your frontend URL
+}));
+
+// Optional: Allow certain HTTP methods
+app.use(cors({
+  origin: 'https://practice-iota-two.vercel.app',
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+}));
 
 
 const cloudinary = require('cloudinary').v2
